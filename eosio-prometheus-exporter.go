@@ -1,7 +1,7 @@
 package exporter
 
 /*
- fio-prometheus-exporter is a simple prometheus exporter for FIO nodeos nodes.
+ eosio-prometheus-exporter is a simple prometheus exporter for FIO nodeos nodes.
  It can connect to multiple nodes and report critical statistics.
 */
 

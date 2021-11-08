@@ -1,4 +1,4 @@
-module github.com/blockpane/fio-prometheus-exporter
+module github.com/i-love-to-code/eosio-prometheus-exporter
 
 go 1.16
 

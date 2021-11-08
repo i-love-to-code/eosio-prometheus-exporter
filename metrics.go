@@ -41,87 +41,87 @@ var (
 
 	// chain/get_info
 	head = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_info_head_block",
+		Name: "eosio_info_head_block",
 		Help: "head block number from get_info endpoint",
 	}, stdLbl)
 	lib = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_info_lib",
+		Name: "eosio_info_lib",
 		Help: "last irreversible block number from get_info endpoint",
 	}, stdLbl)
 	lag = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_info_head_lag",
+		Name: "eosio_info_head_lag",
 		Help: "seconds behind the head block",
 	}, stdLbl)
 
 	// net/connections
 	netGood = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_net_connected_peers",
+		Name: "eosio_net_connected_peers",
 		Help: "number of connected peers",
 	}, stdLbl)
 	netBad = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_net_disconnected_peers",
+		Name: "eosio_net_disconnected_peers",
 		Help: "number of unreachable peers",
 	}, stdLbl)
 	netSyncing = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_net_syncing_peers",
+		Name: "eosio_net_syncing_peers",
 		Help: "number of peers catching up",
 	}, stdLbl)
 
 	// producer/paused
 	prodPaused = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_producing",
+		Name: "eosio_producer_producing",
 		Help: "if producer api is paused: 1 means actively signing blocks, otherwise null",
 	}, stdLbl)
 
 	// producer/get_runtime_options
 	maxTxTime = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_runtime_max_transaction_time",
+		Name: "eosio_runtime_max_transaction_time",
 		Help: "maximum transaction time (http_plugin)",
 	}, stdLbl)
 
 	// chain/get_producers
 	prodActive = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_is_active",
+		Name: "eosio_producer_is_active",
 		Help: "whether producer is set to active",
 	}, prodLbl)
 	prodTop = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_is_top21",
+		Name: "eosio_producer_is_top21",
 		Help: "whether producer is in the top 21: 0 if false",
 	}, prodLbl)
 	prodClaimSec = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_last_bpclaim_delta",
+		Name: "eosio_producer_last_bpclaim_delta",
 		Help: "seconds since last bpclaim",
 	}, prodLbl)
 	prodRank = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_rank",
+		Name: "eosio_producer_rank",
 		Help: "producer rank",
 	}, prodLbl)
 	prodVotes = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_votes",
+		Name: "eosio_producer_votes",
 		Help: "producer votes in FIO",
 	}, prodLbl)
 
 	// chain/get_producer_schedule
 	schedActive = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_schedule_active",
+		Name: "eosio_producer_schedule_active",
 		Help: "active producer schedule",
 	}, stdLbl)
 	schedPending = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_schedule_pending",
+		Name: "eosio_producer_schedule_pending",
 		Help: "pending producer schedule",
 	}, stdLbl)
 	schedProposed = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_producer_schedule_proposed",
+		Name: "eosio_producer_schedule_proposed",
 		Help: "proposed producer schedule",
 	}, stdLbl)
 
 	// db_size/get
 	dbFree = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_db_free_bytes",
+		Name: "eosio_db_free_bytes",
 		Help: "bytes remaining for memory state",
 	}, stdLbl)
 	dbUsed = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "fio_db_used_bytes",
+		Name: "eosio_db_used_bytes",
 		Help: "bytes used by memory state",
 	}, stdLbl)
 )

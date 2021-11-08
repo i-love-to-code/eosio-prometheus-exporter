@@ -18,39 +18,39 @@ Any metrics related to a producer will have an addition label, aptly named `prod
 
 ### Standard endpoints (should work by default)
 
-- `fio_info_head_block` head block number from get_info endpoint
-- `fio_info_head_lag` seconds behind the head block
-- `fio_info_lib last` irreversible block number from get_info endpoint
+- `eosio_info_head_block` head block number from get_info endpoint
+- `eosio_info_head_lag` seconds behind the head block
+- `eosio_info_lib last` irreversible block number from get_info endpoint
 
 
-- `fio_producer_is_active` whether producer is set to active
-- `fio_producer_is_top21` whether producer is in the top 21: 0 if false
-- `fio_producer_last_bpclaim_delta` seconds since last bpclaim
-- `fio_producer_rank` producer rank
-- `fio_producer_schedule_active` active producer schedule
-- `fio_producer_schedule_pending` pending producer schedule
-- `fio_producer_schedule_proposed` proposed producer schedule
-- `fio_producer_votes` producer votes in FIO
+- `eosio_producer_is_active` whether producer is set to active
+- `eosio_producer_is_top21` whether producer is in the top 21: 0 if false
+- `eosio_producer_last_bpclaim_delta` seconds since last bpclaim
+- `eosio_producer_rank` producer rank
+- `eosio_producer_schedule_active` active producer schedule
+- `eosio_producer_schedule_pending` pending producer schedule
+- `eosio_producer_schedule_proposed` proposed producer schedule
+- `eosio_producer_votes` producer votes in FIO
 
 
-- `fio_runtime_max_transaction_time` maximum transaction time (http_plugin)
+- `eosio_runtime_max_transaction_time` maximum transaction time (http_plugin)
 
 ### Non standard endpoints:
 
 #### Requires `eosio::producer_api_plugin`
 
-- `fio_producer_producing` if producer api is paused: 1 means actively signing blocks, otherwise null
+- `eosio_producer_producing` if producer api is paused: 1 means actively signing blocks, otherwise null
 
 #### Requires `eosio::db_size_api_plugin`
 
-- `fio_db_free_bytes` bytes remaining for memory state
-- `fio_db_used_bytes` bytes used by memory state
+- `eosio_db_free_bytes` bytes remaining for memory state
+- `eosio_db_used_bytes` bytes used by memory state
 
 #### Requires `eosio::net_api_plugin`
 
-- `fio_net_connected_peers` number of connected peers
-- `fio_net_disconnected_peers` number of unreachable peers
-- `fio_net_syncing_peers` number of peers catching up
+- `eosio_net_connected_peers` number of connected peers
+- `eosio_net_disconnected_peers` number of unreachable peers
+- `eosio_net_syncing_peers` number of peers catching up
 
 ## Grafana
 

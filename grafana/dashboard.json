@@ -70,7 +70,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "fio_producer_producing{chain_id=\"$chainid\"}",
+          "expr": "eosio_producer_producing{chain_id=\"$chainid\"}",
           "interval": "",
           "legendFormat": "{{endpoint}}",
           "refId": "A"
@@ -162,7 +162,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sort_desc(fio_producer_votes{chain_id=\"$chainid\",producer=~\"$producer\"})",
+          "expr": "sort_desc(eosio_producer_votes{chain_id=\"$chainid\",producer=~\"$producer\"})",
           "format": "time_series",
           "interval": "",
           "legendFormat": "{{producer}}",
@@ -245,7 +245,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "fio_info_head_lag{chain_id=\"$chainid\"}",
+          "expr": "eosio_info_head_lag{chain_id=\"$chainid\"}",
           "interval": "",
           "legendFormat": "{{endpoint}}",
           "refId": "A"
@@ -340,7 +340,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "max(fio_info_head_block{chain_id=\"$chainid\"}) by (endpoint, version)",
+          "expr": "max(eosio_info_head_block{chain_id=\"$chainid\"}) by (endpoint, version)",
           "interval": "",
           "legendFormat": "{{endpoint}} {{version}}",
           "refId": "A"
@@ -421,7 +421,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "fio_db_used_bytes{chain_id=\"$chainid\"}",
+          "expr": "eosio_db_used_bytes{chain_id=\"$chainid\"}",
           "interval": "",
           "legendFormat": "{{endpoint}}",
           "refId": "A"
@@ -541,7 +541,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "fio_producer_rank{chain_id=\"$chainid\", producer=~\"$producer\"}",
+          "expr": "eosio_producer_rank{chain_id=\"$chainid\", producer=~\"$producer\"}",
           "interval": "",
           "legendFormat": "{{producer}}",
           "refId": "A"
@@ -636,14 +636,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "fio_net_connected_peers{chain_id=\"$chainid\"}",
+          "expr": "eosio_net_connected_peers{chain_id=\"$chainid\"}",
           "interval": "",
           "legendFormat": "Peers: {{endpoint}}",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "fio_net_disconnected_peers{chain_id=\"$chainid\"}",
+          "expr": "eosio_net_disconnected_peers{chain_id=\"$chainid\"}",
           "hide": true,
           "interval": "",
           "legendFormat": "Failed: {{endpoint}}",
@@ -651,7 +651,7 @@
         },
         {
           "exemplar": true,
-          "expr": "fio_net_syncing_peers{chain_id=\"$chainid\"}",
+          "expr": "eosio_net_syncing_peers{chain_id=\"$chainid\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "Syncing: {{endpoint}}",
