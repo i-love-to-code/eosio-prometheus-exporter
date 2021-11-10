@@ -135,6 +135,7 @@ type infoUpdate struct {
 	Endpoint string
 	Version  string
 	Url      string
+	Name	 string
 }
 
 func processInfo(ctx context.Context, updates chan *infoUpdate) {

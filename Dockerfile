@@ -12,20 +12,21 @@ RUN apt-get update && apt-get -y upgrade && apt-get -y install ca-certificates &
 groupadd -g 13856 exporter && useradd -u 13856 -m -d /exporter -g exporter -r exporter
 
 
-FROM scratch
+#FROM scratch
 
-COPY --from=stager /etc/passwd /etc/passwd
-COPY --from=stager /etc/group /etc/group
-COPY --from=stager --chown=exporter:exporter /exporter /exporter
-COPY --from=stager /usr/lib /usr/lib
-COPY --from=stager /lib /lib
+#COPY --from=stager /etc/passwd /etc/passwd
+#COPY --from=stager /etc/group /etc/group
+#COPY --from=stager --chown=exporter:exporter /exporter /exporter
+#COPY --from=stager /usr/lib /usr/lib
+#COPY --from=stager /lib /lib
 # COPY --from=stager /lib64 /lib64
-COPY --from=stager /etc/ssl /etc/ssl
+#COPY --from=stager /etc/ssl /etc/ssl
+#COPY --from=stager /bin/bash /bin/bash
 
-COPY --from=builder /app/eosio-prometheus-exporter /
-
-EXPOSE 13856
-WORKDIR /exporter
+#EXPOSE 13856
 USER exporter
+WORKDIR /exporter
 
-ENTRYPOINT ["/eosio-prometheus-exporter"]
+COPY --from=builder /app/eosio-prometheus-exporter /exporter
+
+ENTRYPOINT ["/exporter/eosio-prometheus-exporter"]

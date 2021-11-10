@@ -22,7 +22,6 @@ Any metrics related to a producer will have an addition label, aptly named `prod
 - `eosio_info_head_lag` seconds behind the head block
 - `eosio_info_lib last` irreversible block number from get_info endpoint
 
-
 - `eosio_producer_is_active` whether producer is set to active
 - `eosio_producer_is_top21` whether producer is in the top 21: 0 if false
 - `eosio_producer_last_bpclaim_delta` seconds since last bpclaim

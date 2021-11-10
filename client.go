@@ -38,14 +38,30 @@ type target struct {
 	api  *fio.API
 }
 
-func newTarget(u string) (*target, error) {
-	api, _, err := fio.NewConnection(nil, u)
+func newTarget(uri string, name string) (*target, error) {
+	
+	h, err := url.Parse(uri)
+
 	if err != nil {
 		return nil, err
 	}
-	h, _ := url.Parse(u)
+
+	hostname := h.Hostname()
+	
+	if len(name) > 0 {
+		hostname = name;
+	}
+
+	log.Printf("Validating target %s: %s", hostname, uri)
+
+	api, _, err := fio.NewConnection(nil, uri)
+	
+	if err != nil {
+		return nil, err
+	}
+	
 	return &target{
-		host: h.Hostname(),
+		host: hostname,
 		api:  api,
 	}, nil
 }
