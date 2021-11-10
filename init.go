@@ -28,7 +28,7 @@ func init() {
 	flag.IntVar(&port, "p", 13856, "port to listen on")
 	flag.Parse()
 
-	regexer, _ := regexp.Compile(`\{.+\}`)
+	regexer, _ := regexp.Compile(`^\{.+\}`)
 
 	urls := strings.Split(nodes, ",")
 	for _, targetUrl := range urls {
@@ -38,7 +38,7 @@ func init() {
 		label := regexer.FindString(targetUrl)
 
 		if len(label) > 0 {
-			targetUrl = strings.ReplaceAll(targetUrl, label, "")
+			targetUrl = strings.Replace(targetUrl, label, "", 1)
 		}
 
 		t, e := newTarget(targetUrl, label)
